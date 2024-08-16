@@ -66,6 +66,9 @@ class EmpS(models.Model):
         verbose_name = "Employee Level-S"
         verbose_name_plural = "Employee Level-S"
 
+    def __str__(self):
+        return self.user.username
+
 class EmpA(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     id = models.AutoField(primary_key=True)
@@ -73,3 +76,6 @@ class EmpA(models.Model):
     class Meta:
         verbose_name = "Employee Level-A"
         verbose_name_plural = "Employee Level-A"
+
+    def __str__(self):
+        return self.user.username
